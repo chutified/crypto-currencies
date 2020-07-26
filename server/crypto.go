@@ -1,6 +1,7 @@
 package server
 
 import (
+	"context"
 	"log"
 	"strings"
 
@@ -23,12 +24,21 @@ func New(log *log.Logger, ds *data.Service) *Crypto {
 	return c
 }
 
-// func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*crypto.GetCryptoResponse, error) {
+func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*crypto.GetCryptoResponse, error) {
 
-// }
+	// handle request
+	resp, err := c.handleGetCryptoRequest(req)
+	if err != nil {
+		return nil, errors.Wrap(err, "handling GetCryptoRequest")
+	}
+
+	// success
+	return resp, nil
+}
 
 func (c *Crypto) handleGetCryptoRequest(req *crypto.GetCryptoRequest) (*crypto.GetCryptoResponse, error) {
 
+	// get name
 	name := req.GetName()
 	name = strings.ToUpper(name)
 	// get currency
@@ -50,6 +60,5 @@ func (c *Crypto) handleGetCryptoRequest(req *crypto.GetCryptoRequest) (*crypto.G
 		ChangeDay:         crc.ChangeDay,
 		ChangeWeek:        crc.ChangeWeek,
 	}
-
 	return resp, nil
 }
