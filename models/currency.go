@@ -9,7 +9,7 @@ type Currency struct {
 	CirculatingSupply float64
 	Mineable          bool
 	Volume            float64
-	ChangeHour        float32
-	ChangeDay         float32
-	ChangeWeek        float32
+	ChangeHour        string
+	ChangeDay         string
+	ChangeWeek        string
 }
