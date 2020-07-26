@@ -1,0 +1,24 @@
+syntax="proto3";
+
+option go_package=".;crypto";
+
+service Crypto {
+    rpc GetCrypto (GetCryptoRequest) returns (GetCryptoResponse);
+}
+
+message GetCryptoRequest {
+    string Name = 1;
+}
+
+message GetCryptoResponse {
+    string Name = 1;
+    string Symbol = 2;
+    double MarketCapUSD = 3;
+    double Price = 4;
+    double CirculatingSupply = 5;
+    bool Mineable = 6;
+    double Volume = 7;
+    string ChangeHour = 8;
+    string ChangeDay = 9;
+    string ChangeWeek = 10;
+}
