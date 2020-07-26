@@ -10,11 +10,13 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Crypto is a server for handling crypto calls.
 type Crypto struct {
 	log *log.Logger
 	ds  *data.Service
 }
 
+// New defines a constructor for the Crypto server.
 func New(log *log.Logger, ds *data.Service) *Crypto {
 	c := &Crypto{
 		log: log,
@@ -24,6 +26,7 @@ func New(log *log.Logger, ds *data.Service) *Crypto {
 	return c
 }
 
+// GetCrypto handles the GetCrypto gRPC calls.
 func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*crypto.GetCryptoResponse, error) {
 
 	// handle request
