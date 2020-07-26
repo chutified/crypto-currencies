@@ -1,6 +1,9 @@
 package data
 
 import (
+	"reflect"
+	"time"
+
 	models "github.com/chutified/crypto-currencies/models"
 	"github.com/pkg/errors"
 )
@@ -32,4 +35,33 @@ func (s *Service) Update() error {
 	// update
 	s.Currencies = ccs
 	return nil
+}
+
+func (s *Service) MonitorData(interval time.Duration) (chan struct{}, chan error) {
+
+	// prepare channels
+	upd := make(chan struct{})
+	errs := make(chan error)
+
+	go func() {
+		ticker := time.Tick(interval)
+		for range ticker {
+
+			// clone
+			cache := s.Currencies
+			err := s.Update()
+			if err != nil {
+				errs <- err
+				continue
+			}
+
+			// compare
+			if reflect.DeepEqual(s.Currencies, cache) {
+				// update, new values
+				upd <- struct{}{}
+			}
+		}
+	}()
+
+	return upd, errs
 }
