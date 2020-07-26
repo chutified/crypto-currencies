@@ -8,16 +8,20 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Service is a data service of the whole app which handles data operations,
+// including fetching, handling data request or updating.
 type Service struct {
 	Currencies map[string]*models.Currency
 }
 
+// New is a constructor for the Service.
 func New() *Service {
 	return &Service{
 		Currencies: make(map[string]*models.Currency),
 	}
 }
 
+// Update updates the database with the latest data.
 func (s *Service) Update() error {
 
 	// fetch
@@ -37,6 +41,7 @@ func (s *Service) Update() error {
 	return nil
 }
 
+// MonitorData handles the new updates.
 func (s *Service) MonitorData(interval time.Duration) (chan struct{}, chan error) {
 
 	// prepare channels
