@@ -1,6 +1,7 @@
 package data
 
 import (
+	"fmt"
 	"reflect"
 	"time"
 
@@ -19,6 +20,19 @@ func New() *Service {
 	return &Service{
 		Currencies: make(map[string]*models.Currency),
 	}
+}
+
+// GetCurrency finds the currency by its name.
+func (s *Service) GetCurrency(c string) (*models.Currency, error) {
+
+	// search
+	cc, ok := s.Currencies[c]
+	if !ok {
+		return nil, fmt.Errorf("currency %s not found", c)
+	}
+
+	// success
+	return cc, nil
 }
 
 // Update updates the database with the latest data.
