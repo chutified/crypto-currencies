@@ -7,6 +7,7 @@ type Currency struct {
 	MarketCapUSD      float64
 	Price             float64
 	CirculatingSupply float64
+	Volume            float64
 	ChangeHour        float32
 	ChangeDay         float32
 	ChangeWeek        float32
