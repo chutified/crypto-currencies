@@ -21,7 +21,7 @@ func main() {
 	// configuration
 	cfg, err := config.GetConfig("config.yaml")
 	if err != nil {
-		l.Fatal(err)
+		l.Fatalf("[error] get config %v", err)
 	}
 	addr := fmt.Sprintf("%s:%d", cfg.Host, cfg.Port)
 
@@ -29,7 +29,7 @@ func main() {
 	ds := data.New()
 	err = ds.Update()
 	if err != nil {
-		l.Fatal(err)
+		l.Fatalf("[error] update %v", err)
 	}
 
 	// servers
@@ -43,7 +43,7 @@ func main() {
 	// listen
 	listen, err := net.Listen("tcp", addr)
 	if err != nil {
-		l.Fatal(err)
+		l.Fatalf("[error] tcp listen %v", err)
 	}
 
 	// initialize the server
