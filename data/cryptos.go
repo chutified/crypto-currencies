@@ -12,23 +12,35 @@ import (
 // Service is a data service of the whole app which handles data operations,
 // including fetching, handling data request or updating.
 type Service struct {
+	symconv symbolsConv
+
 	Currencies map[string]*models.Currency
 }
 
 // New is a constructor for the Service.
 func New() *Service {
-	return &Service{
+	s := &Service{
+		symconv: make(symbolsConv),
+
 		Currencies: make(map[string]*models.Currency),
 	}
+
+	return s
 }
 
 // GetCurrency finds the currency by its name.
-func (s *Service) GetCurrency(c string) (*models.Currency, error) {
+func (s *Service) GetCurrency(name string) (*models.Currency, error) {
+
+	// convert
+	n, ok := s.symconv[name]
+	if ok {
+		name = n
+	}
 
 	// search
-	cc, ok := s.Currencies[c]
+	cc, ok := s.Currencies[name]
 	if !ok {
-		return nil, fmt.Errorf("currency %s not found", c)
+		return nil, fmt.Errorf("currency %s not found", name)
 	}
 
 	// success
@@ -50,8 +62,12 @@ func (s *Service) Update() error {
 		return errors.Wrap(err, "parsing records")
 	}
 
+	// update symbols converter
+	s.symconv.fromCurrencies(ccs)
+
 	// update
 	s.Currencies = ccs
+
 	return nil
 }
 
