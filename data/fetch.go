@@ -23,7 +23,8 @@ type record struct {
 	changeWeek        string
 }
 
-func FetchRecords(url string) ([]record, error) {
+// fetchRecords crawls the url and returns the record data.
+func fetchRecords(url string) ([]record, error) {
 
 	// fetch url
 	doc, err := goquery.NewDocument(url)
@@ -80,7 +81,8 @@ func FetchRecords(url string) ([]record, error) {
 	return rs, nil
 }
 
-func ParseRecords(rs []record) (map[string]*models.Currency, error) {
+// parseRecords takes slice of records and convert them into the map of currencies.
+func parseRecords(rs []record) (map[string]*models.Currency, error) {
 
 	// prepare holder
 	ccs := make(map[string]*models.Currency)
