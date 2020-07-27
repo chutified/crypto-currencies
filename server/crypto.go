@@ -11,15 +11,17 @@ import (
 
 // Crypto is a server for handling crypto calls.
 type Crypto struct {
-	log *log.Logger
-	ds  *data.Service
+	log  *log.Logger
+	ds   *data.Service
+	subs map[crypto.Crypto_SubscribeCryptoServer][]*crypto.GetCryptoRequest
 }
 
 // New defines a constructor for the Crypto server.
 func New(log *log.Logger, ds *data.Service) *Crypto {
 	c := &Crypto{
-		log: log,
-		ds:  ds,
+		log:  log,
+		ds:   ds,
+		subs: make(map[crypto.Crypto_SubscribeCryptoServer][]*crypto.GetCryptoRequest),
 	}
 
 	return c
