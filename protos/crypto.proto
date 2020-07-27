@@ -1,9 +1,12 @@
 syntax="proto3";
 
+import "google/rpc/status.proto";
+
 option go_package=".;crypto";
 
 service Crypto {
     rpc GetCrypto (GetCryptoRequest) returns (GetCryptoResponse);
+    rpc SubscribeCrypto (stream GetCryptoRequest) returns (stream SubscribeCryptoResponse);
 }
 
 message GetCryptoRequest {
@@ -21,4 +24,12 @@ message GetCryptoResponse {
     string ChangeHour = 8;
     string ChangeDay = 9;
     string ChangeWeek = 10;
+}
+
+
+message SubscribeCryptoResponse {
+    oneof message {
+        GetCryptoResponse GetCryptoResponse = 1;
+        google.rpc.Status Error = 2;
+    }
 }
