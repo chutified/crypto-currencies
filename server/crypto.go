@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"strings"
+	"time"
 
 	"github.com/chutified/crypto-currencies/data"
 	"github.com/chutified/crypto-currencies/protos/crypto"
@@ -37,7 +38,6 @@ func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*
 	// handle request
 	resp, err := c.handleGetCryptoRequest(req)
 	if err != nil {
-
 		c.log.Printf("[error] handle GetCryptoRequest: %v", err)
 
 		// TODO
@@ -60,7 +60,6 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		// receive request
 		req, err := srv.Recv()
 		if err == io.EOF {
-
 			c.log.Printf("[cancel] client canceled connection (%s)", id)
 
 			// cancel all subscriptions
@@ -70,7 +69,6 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 			return nil
 		}
 		if err != nil {
-
 			c.log.Printf("[error] receive error (%s)", id)
 
 			// cancel all subscriptions
@@ -122,5 +120,53 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		// append
 		c.log.Printf("[success] currency: '%s' subscribed (%s)", req.Name, id)
 		c.subs[srv] = append(c.subs[srv], req)
+	}
+}
+
+// handleUpdatesCrypto will inform if the data service receives new data values.
+func (c *Crypto) handleUpdatesCrypto(interval time.Duration) {
+
+	// prepare channels
+	updates, errs := c.ds.MonitorData(interval)
+
+	// handle erorrs
+	go func() {
+
+		// receive errors
+		for err := range errs {
+			c.log.Printf("[error] monitoring service data: %v", err)
+		}
+	}()
+
+	// handle updates
+	for range updates {
+		c.log.Printf("[update] cryptocurrencies data updated")
+
+		// range over clients
+		for client, subs := range c.subs {
+
+			// range over subsciptions
+			for _, req := range subs {
+
+				// handle subscription
+				resp, err := c.handleGetCryptoRequest(req)
+				if err != nil {
+					c.log.Printf("[error] handle GetCryptoRequest: %v", err)
+
+					// TODO
+
+					continue
+				}
+
+				err = client.Send(resp)
+				if err != nil {
+					c.log.Printf("[error] send response: %v", err)
+
+					// TODO
+
+					continue
+				}
+			}
+		}
 	}
 }
