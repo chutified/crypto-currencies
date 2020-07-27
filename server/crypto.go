@@ -39,3 +39,18 @@ func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*
 	// success
 	return resp, nil
 }
+
+// SubscribeCrypto handles the SubscribeCrypto gRPC calls.
+func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error {
+
+	// handle requests
+	for {
+
+		// receive request
+		req, err := srv.Recv()
+		if err != nil {
+			return err
+		}
+
+	}
+}
