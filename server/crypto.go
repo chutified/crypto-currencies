@@ -12,6 +12,8 @@ import (
 	"github.com/chutified/crypto-currencies/protos/crypto"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 )
 
 // Crypto is a server for handling crypto calls.
@@ -40,8 +42,13 @@ func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*
 	if err != nil {
 		c.log.Printf("[error] handle GetCryptoRequest: %v", err)
 
-		// TODO
-		return nil, errors.Wrap(err, "handling GetCryptoRequest")
+		// define error status
+		gErr := status.Newf(
+			codes.NotFound,
+			"cryptocurrency '%s' not found", req.GetName(),
+		)
+
+		return nil, gErr.Err()
 	}
 
 	// success
@@ -75,17 +82,28 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 			delete(c.subs, srv)
 			c.log.Printf("[server] delete client's subscriptions (%s)", id)
 
-			// TODO
-			return err
+			return errors.Wrap(err, "receiving client's request")
 		}
 		req.Name = strings.ToUpper(req.GetName())
 
 		// validate request
 		_, err = c.ds.GetCurrency(req.Name)
 		if err != nil {
-			// TODO
-
 			c.log.Printf("[invalid] invalid request, currency: %s (%s)", req.Name, id)
+
+			// define error status
+			gErr := status.Newf(
+				codes.NotFound,
+				"cryptocurrency '%s' not found", req.GetName(),
+			)
+
+			// send error message
+			err = srv.Send(&crypto.SubscribeCryptoResponse{
+				Message: &crypto.SubscribeCryptoResponse_Error{
+					Error: gErr.Proto(),
+				},
+			})
+
 			continue
 		}
 
@@ -95,25 +113,33 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		}
 
 		// check if client has already subscribed
-		var duplicit error
+		var duplicit *status.Status
 		for _, r := range c.subs[srv] {
 
 			// compare names
 			fmt.Println(r.Name, req.Name)
 			if r.Name == req.Name {
 
-				duplicit = errors.Errorf("client has already subscribed to %s", req.Name)
-				// TODO
+				// define error status
+				duplicit = status.Newf(
+					codes.AlreadyExists,
+					"client has already subscribed for the currency '%s'", req.Name,
+				)
 
 				break
 			}
 		}
 		// check duplicit
 		if duplicit != nil {
-
-			// TODO
-
 			c.log.Printf("[invalid] invalid request, currency: '%s' already subscribed (%s)", req.Name, id)
+
+			// send error message
+			srv.Send(&crypto.SubscribeCryptoResponse{
+				Message: &crypto.SubscribeCryptoResponse_Error{
+					Error: duplicit.Proto(),
+				},
+			})
+
 			continue
 		}
 
@@ -153,17 +179,29 @@ func (c *Crypto) handleUpdatesCrypto(interval time.Duration) {
 				if err != nil {
 					c.log.Printf("[error] handle GetCryptoRequest: %v", err)
 
-					// TODO
+					// define error status
+					gErr := status.Newf(
+						codes.NotFound,
+						"cryptocurrency '%s' no longer exists in service database", req.GetName(),
+					)
+
+					// send error message
+					err = client.Send(&crypto.SubscribeCryptoResponse{
+						Message: &crypto.SubscribeCryptoResponse_Error{
+							Error: gErr.Proto(),
+						},
+					})
 
 					continue
 				}
 
-				err = client.Send(resp)
+				err = client.Send(&crypto.SubscribeCryptoResponse{
+					Message: &crypto.SubscribeCryptoResponse_GetCryptoResponse{
+						GetCryptoResponse: resp,
+					},
+				})
 				if err != nil {
 					c.log.Printf("[error] send response: %v", err)
-
-					// TODO
-
 					continue
 				}
 			}
