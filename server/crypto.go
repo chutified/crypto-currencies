@@ -61,19 +61,23 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		req, err := srv.Recv()
 		if err == io.EOF {
 
+			c.log.Printf("[cancel] client canceled connection (%s)", id)
+
 			// cancel all subscriptions
 			delete(c.subs, srv)
+			c.log.Printf("[server] delete client's subscriptions (%s)", id)
 
-			c.log.Printf("[cancel] client canceled connection (%s)", id)
 			return nil
 		}
 		if err != nil {
 
+			c.log.Printf("[error] receive error (%s)", id)
+
 			// cancel all subscriptions
 			delete(c.subs, srv)
+			c.log.Printf("[server] delete client's subscriptions (%s)", id)
 
 			// TODO
-			c.log.Printf("[error] receive error (%s)", id)
 			return err
 		}
 		req.Name = strings.ToUpper(req.GetName())
