@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"log"
 	"strings"
@@ -75,14 +76,14 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 			c.log.Printf("[error] receive error (%s)", id)
 			return err
 		}
-		name := strings.ToUpper(req.GetName())
+		req.Name = strings.ToUpper(req.GetName())
 
 		// validate request
-		_, err = c.ds.GetCurrency(name)
+		_, err = c.ds.GetCurrency(req.Name)
 		if err != nil {
 			// TODO
 
-			c.log.Printf("[invalid] invalid request, currency: %s (%s)", name, id)
+			c.log.Printf("[invalid] invalid request, currency: %s (%s)", req.Name, id)
 			continue
 		}
 
@@ -96,9 +97,10 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		for _, r := range c.subs[srv] {
 
 			// compare names
-			if r.Name == name {
+			fmt.Println(r.Name, req.Name)
+			if r.Name == req.Name {
 
-				duplicit = errors.Errorf("client has already subscribed to %s", name)
+				duplicit = errors.Errorf("client has already subscribed to %s", req.Name)
 				// TODO
 
 				break
@@ -109,12 +111,12 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 
 			// TODO
 
-			c.log.Printf("[invalid] invalid request, currency: '%s' already subscribed (%s)", name, id)
+			c.log.Printf("[invalid] invalid request, currency: '%s' already subscribed (%s)", req.Name, id)
 			continue
 		}
 
 		// append
-		c.log.Printf("[success] currency: '%s' subscribed (%s)", name, id)
+		c.log.Printf("[success] currency: '%s' subscribed (%s)", req.Name, id)
 		c.subs[srv] = append(c.subs[srv], req)
 	}
 }
