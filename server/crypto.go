@@ -8,6 +8,7 @@ import (
 
 	"github.com/chutified/crypto-currencies/data"
 	"github.com/chutified/crypto-currencies/protos/crypto"
+	"github.com/google/uuid"
 	"github.com/pkg/errors"
 )
 
@@ -35,17 +36,23 @@ func (c *Crypto) GetCrypto(ctx context.Context, req *crypto.GetCryptoRequest) (*
 	// handle request
 	resp, err := c.handleGetCryptoRequest(req)
 	if err != nil {
-		return nil, errors.Wrap(err, "handling GetCryptoRequest")
+
+		c.log.Printf("[error] handle GetCryptoRequest: %v", err)
+
 		// TODO
+		return nil, errors.Wrap(err, "handling GetCryptoRequest")
 	}
 
 	// success
+	c.log.Printf("[success] handled request of '%s' currency", resp.GetName())
 	return resp, nil
 }
 
 // SubscribeCrypto handles the SubscribeCrypto gRPC calls.
 func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error {
 
+	id := uuid.New().String()
+	c.log.Printf("[success] new client (%s)", id)
 	// handle requests
 	for {
 
@@ -56,6 +63,7 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 			// cancel all subscriptions
 			delete(c.subs, srv)
 
+			c.log.Printf("[cancel] client canceled connection (%s)", id)
 			return nil
 		}
 		if err != nil {
@@ -63,8 +71,9 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 			// cancel all subscriptions
 			delete(c.subs, srv)
 
-			return err
 			// TODO
+			c.log.Printf("[error] receive error (%s)", id)
+			return err
 		}
 		name := strings.ToUpper(req.GetName())
 
@@ -73,6 +82,7 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		if err != nil {
 			// TODO
 
+			c.log.Printf("[invalid] invalid request, currency: %s (%s)", name, id)
 			continue
 		}
 
@@ -97,14 +107,14 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		// check duplicit
 		if duplicit != nil {
 
-			// cancel all subscriptions
-			delete(c.subs, srv)
 			// TODO
 
+			c.log.Printf("[invalid] invalid request, currency: '%s' already subscribed (%s)", name, id)
 			continue
 		}
 
 		// append
+		c.log.Printf("[success] currency: '%s' subscribed (%s)", name, id)
 		c.subs[srv] = append(c.subs[srv], req)
 	}
 }
