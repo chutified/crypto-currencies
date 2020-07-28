@@ -5,7 +5,9 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"reflect"
 	"testing"
+	"time"
 
 	"github.com/chutified/crypto-currencies/data"
 	"github.com/chutified/crypto-currencies/protos/crypto"
@@ -57,6 +59,58 @@ func TestCrypto(t *testing.T) {
 
 				assert.Equal(t1, "", test.err)
 				assert.Equal(t1, resp.Name, test.currName)
+			}
+		})
+	}
+}
+
+// TODO SubscribeCrypto
+
+func TestHandleUpdatesCrypto(t *testing.T) {
+
+	log := log.New(bytes.NewBufferString(""), "", log.LstdFlags)
+	ds := data.New()
+	err := ds.Update("https://coinmarketcap.com/all/views/all/")
+	if err != nil {
+		t.Fatalf("unexpected data service update error: %v", err)
+	}
+	c := New(log, ds)
+
+	tests := []struct {
+		name string
+		url  string
+		err  string
+	}{
+		{
+			name: "ok",
+			url:  "https://coinmarketcap.com/all/views/all",
+		},
+		{
+			name: "invalid url",
+			url:  "invalid",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t1 *testing.T) {
+
+			cache := c.ds.Currencies
+
+			go func() {
+				c.handleUpdatesCrypto(400*time.Millisecond, test.url)
+			}()
+
+			if test.url == "invalid" {
+
+				time.Sleep(1 * time.Second)
+				equals := reflect.DeepEqual(c.ds.Currencies, cache)
+				assert.Equal(t1, equals, true)
+
+			} else {
+
+				time.Sleep(2 * time.Minute)
+				equals := reflect.DeepEqual(c.ds.Currencies, cache)
+				assert.Equal(t1, equals, false)
 			}
 		})
 	}
