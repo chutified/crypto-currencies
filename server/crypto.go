@@ -172,7 +172,6 @@ func (c *Crypto) handleUpdatesCrypto(interval time.Duration, url string) {
 	// handle updates
 	for range updates {
 		c.log.Printf("[update] cryptocurrencies data updated")
-		fmt.Println("UPPPPP")
 
 		// range over clients
 		for client, subs := range c.subs {
