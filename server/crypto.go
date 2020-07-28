@@ -32,7 +32,7 @@ func New(log *log.Logger, ds *data.Service) *Crypto {
 	}
 
 	go func() {
-		c.handleUpdatesCrypto(6 * time.Second)
+		c.handleUpdatesCrypto(6*time.Second, "https://coinmarketcap.com/all/views/all/")
 	}()
 
 	return c
@@ -155,10 +155,10 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 }
 
 // handleUpdatesCrypto will inform if the data service receives new data values.
-func (c *Crypto) handleUpdatesCrypto(interval time.Duration) {
+func (c *Crypto) handleUpdatesCrypto(interval time.Duration, url string) {
 
 	// prepare channels
-	updates, errs := c.ds.MonitorData(interval, "https://coinmarketcap.com/all/views/all/")
+	updates, errs := c.ds.MonitorData(interval, url)
 
 	// handle erorrs
 	go func() {
@@ -172,6 +172,7 @@ func (c *Crypto) handleUpdatesCrypto(interval time.Duration) {
 	// handle updates
 	for range updates {
 		c.log.Printf("[update] cryptocurrencies data updated")
+		fmt.Println("UPPPPP")
 
 		// range over clients
 		for client, subs := range c.subs {
