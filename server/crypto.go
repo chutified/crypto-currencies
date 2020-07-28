@@ -158,7 +158,7 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 func (c *Crypto) handleUpdatesCrypto(interval time.Duration) {
 
 	// prepare channels
-	updates, errs := c.ds.MonitorData(interval)
+	updates, errs := c.ds.MonitorData(interval, "https://coinmarketcap.com/all/views/all/")
 
 	// handle erorrs
 	go func() {

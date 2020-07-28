@@ -27,7 +27,7 @@ func main() {
 
 	// data service
 	ds := data.New()
-	err = ds.Update()
+	err = ds.Update("https://coinmarketcap.com/all/views/all/")
 	if err != nil {
 		l.Fatalf("[error] update %v", err)
 	}

@@ -48,10 +48,10 @@ func (s *Service) GetCurrency(name string) (*models.Currency, error) {
 }
 
 // Update updates the database with the latest data.
-func (s *Service) Update() error {
+func (s *Service) Update(url string) error {
 
 	// fetch
-	rs, err := fetchRecords("https://coinmarketcap.com/all/views/all/")
+	rs, err := fetchRecords(url)
 	if err != nil {
 		return errors.Wrap(err, "fetching records")
 	}
@@ -72,7 +72,7 @@ func (s *Service) Update() error {
 }
 
 // MonitorData handles the new updates.
-func (s *Service) MonitorData(interval time.Duration) (chan struct{}, chan error) {
+func (s *Service) MonitorData(interval time.Duration, url string) (chan struct{}, chan error) {
 
 	// prepare channels
 	upd := make(chan struct{})
@@ -84,7 +84,7 @@ func (s *Service) MonitorData(interval time.Duration) (chan struct{}, chan error
 
 			// clone
 			cache := s.Currencies
-			err := s.Update()
+			err := s.Update(url)
 			if err != nil {
 				errs <- err
 				continue
