@@ -87,7 +87,7 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		req.Name = strings.ToUpper(req.GetName())
 
 		// validate request
-		_, err = c.ds.GetCurrency(req.Name)
+		m, err := c.ds.GetCurrency(req.Name)
 		if err != nil {
 			c.log.Printf("[invalid] invalid request, currency: %s (%s)", req.Name, id)
 
@@ -106,6 +106,7 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 
 			continue
 		}
+		req.Name = m.Name
 
 		// create server key if it does not exist
 		if _, ok := c.subs[srv]; !ok {
