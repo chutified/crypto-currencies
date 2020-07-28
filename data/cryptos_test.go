@@ -13,7 +13,7 @@ func TestService(t *testing.T) {
 	s := New()
 
 	// >>> Update()
-	tests := []struct {
+	tests0 := []struct {
 		name string
 		url  string
 		err  string
@@ -35,7 +35,7 @@ func TestService(t *testing.T) {
 		},
 	}
 
-	for _, test := range tests {
+	for _, test := range tests0 {
 		t.Run(test.name, func(t1 *testing.T) {
 
 			err := s.Update(test.url)
@@ -47,6 +47,46 @@ func TestService(t *testing.T) {
 			} else {
 
 				assert.Equal(t1, "", test.err)
+			}
+		})
+	}
+
+	// >>> GetCurrency()
+	tests1 := []struct {
+		name     string
+		currency string
+		err      string
+	}{
+		{
+			name:     "full name",
+			currency: "BITCOIN",
+			err:      "",
+		},
+		{
+			name:     "symbol",
+			currency: "BTC",
+			err:      "",
+		},
+		{
+			name:     "not found",
+			currency: "invalid",
+			err:      "currency .* not found",
+		},
+	}
+
+	for _, test := range tests1 {
+		t.Run(test.name, func(t1 *testing.T) {
+
+			m, err := s.GetCurrency(test.currency)
+			if err != nil {
+
+				exp := fmt.Sprintf("%s.*", test.err)
+				assert.MatchRegex(t1, err.Error(), exp)
+
+			} else {
+
+				assert.Equal(t1, "", test.err)
+				assert.NotEqual(t1, m, nil)
 			}
 		})
 	}
