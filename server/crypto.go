@@ -31,6 +31,10 @@ func New(log *log.Logger, ds *data.Service) *Crypto {
 		subs: make(map[crypto.Crypto_SubscribeCryptoServer][]*crypto.GetCryptoRequest),
 	}
 
+	go func() {
+		c.handleUpdatesCrypto(6 * time.Second)
+	}()
+
 	return c
 }
 
