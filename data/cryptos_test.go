@@ -3,6 +3,7 @@ package data
 import (
 	"fmt"
 	"testing"
+	"time"
 
 	"gopkg.in/go-playground/assert.v1"
 )
@@ -88,6 +89,39 @@ func TestService(t *testing.T) {
 				assert.Equal(t1, "", test.err)
 				assert.NotEqual(t1, m, nil)
 			}
+		})
+	}
+
+	// >>> MonitorData()
+	tests2 := []struct {
+		name string
+		url  string
+		err  bool
+	}{
+		{
+			name: "ok",
+			url:  "https://coinmarketcap.com/all/views/all", err: false,
+		},
+		{
+			name: "invalid ",
+			url:  "invalid",
+			err:  true,
+		},
+	}
+
+	for _, test := range tests2 {
+		t.Run(test.name, func(t1 *testing.T) {
+
+			_, errs := s.MonitorData(500*time.Millisecond, test.url)
+
+			var hasErr bool
+			go func() {
+				_ = <-errs
+				hasErr = true
+			}()
+
+			time.Sleep(2 * time.Second)
+			assert.Equal(t1, hasErr, test.err)
 		})
 	}
 }
