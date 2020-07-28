@@ -91,7 +91,7 @@ func (s *Service) MonitorData(interval time.Duration, url string) (chan struct{}
 			}
 
 			// compare
-			if reflect.DeepEqual(s.Currencies, cache) {
+			if !(reflect.DeepEqual(s.Currencies, cache)) {
 				// update, new values
 				upd <- struct{}{}
 			}
