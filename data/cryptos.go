@@ -62,11 +62,11 @@ func (s *Service) Update() error {
 		return errors.Wrap(err, "parsing records")
 	}
 
-	// update symbols converter
-	s.symconv.fromCurrencies(ccs)
-
 	// update
 	s.Currencies = ccs
+
+	// update symbols converter
+	s.updateSymConv()
 
 	return nil
 }
