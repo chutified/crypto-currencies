@@ -4,32 +4,81 @@ import "google/rpc/status.proto";
 
 option go_package=".;crypto";
 
+// Crypto is a service which provides the latest information about cryptocurrencies.
+// All data are fetched from the website https://coinmarketcap.com/all/views/all/.
+// The Crypto is checking every 15 seconds if new data are uploaded.
 service Crypto {
+
+    // GetCrypto response with the data about the currency.
+    // Name, symbol, market cap in USD, current price, circulating supply,
+    // mineable info, currency changes in last hour/day/week in percentages
+    // data are provided.
     rpc GetCrypto (GetCryptoRequest) returns (GetCryptoResponse);
+
+    // SubscribeCrypto subscribe the client for the requested currency.
+    // Everytime new data are fetched from the source all clients receive
+    // the new GetCrypto responses for each subscribed currency.
     rpc SubscribeCrypto (stream GetCryptoRequest) returns (stream SubscribeCryptoResponse);
 }
 
+// GetCryptoRequest defines the request message for the cryptocurrency request.
 message GetCryptoRequest {
+
+    // Name stands for the fullname or the symbol of the requested crypto currency.
+    // The Name is not case sensitive.
     string Name = 1;
 }
 
+// GetCryptoResponse defines the response message for the the GetCrypto
+// and indirectly for the SubscribeCrypto rpc calls.
 message GetCryptoResponse {
+
+    // Name is the full name of the crypto currency.  The Name value is fully capitalized.
     string Name = 1;
+
+    // Symbol is the short version of the full currency name.
+    // The Symbol value is fully capitalized.
     string Symbol = 2;
+
+    // MarketCapUSD is the currency total value in the market.
     double MarketCapUSD = 3;
+
+    // Pirce is the current cryptocurrency value in USD.
     double Price = 4;
+
+    // CirculatingSupple is the amount of the cryptocurrency
+    // which is publicly available and circulating in the market.
     double CirculatingSupply = 5;
+
+    // Mineable is a bool value which indicates, whether is the currency
+    // mineable or not.
     bool Mineable = 6;
+
+    // Volume is the total value of the currencis in USD
+    // which was traded in the last 24 hours.
     double Volume = 7;
+
+    // Change is the percentage value which indicates the changes
+    // of the currency value in last hour, day or week.
     string ChangeHour = 8;
     string ChangeDay = 9;
     string ChangeWeek = 10;
 }
 
 
+// SubscribeCryptoResponse defines the response messager
+// for the SubscribeCrypto rpc call.
+// The message is composed of either the GetCryptoResponse
+// if no error occurs during the request handle or the grpc.Status
+// which holds the grpc status code and the error message.
 message SubscribeCryptoResponse {
     oneof message {
+
+        // GetCryptoResponse is the response message
+        // with the data of the subscribed currency.
         GetCryptoResponse GetCryptoResponse = 1;
+
+        // Error is the error message of the failed request handle.
         google.rpc.Status Error = 2;
     }
 }
