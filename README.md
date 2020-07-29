@@ -246,7 +246,7 @@ _
 ├── go.sum
 ├── main.go
 ├── Makefile
-├── README.md
+└── README.md
 ```
 
 source: https://coinmarketcap.com/all/views/all/
