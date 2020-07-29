@@ -32,7 +32,7 @@ func New(log *log.Logger, ds *data.Service) *Crypto {
 	}
 
 	go func() {
-		c.handleUpdatesCrypto(6*time.Second, "https://coinmarketcap.com/all/views/all/")
+		c.handleUpdatesCrypto(15*time.Second, "https://coinmarketcap.com/all/views/all/")
 	}()
 
 	return c
