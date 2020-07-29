@@ -3,44 +3,44 @@
 #### suported cryptocurrencies
 <table>
     <tr>
-        <td>HARMONY (**ONE**)</td>
-        <td>PROJECT PAI (**PAI**)</td>
-        <td>LOOM NETWORK (**LOOM**)</td>
-        <td>BITCOIN (**BTC**)</td>
-        <td>ENJIN COIN (**ENJ**)</td>
-        <td>FLEXACOIN (**FXC**)</td>
-        <td>KAVA.IO (**KAVA**)</td>
-        <td>CHILIZ (**CHZ**)</td>
+        <td>HARMONY (<b>ONE<\b>)</td>
+        <td>PROJECT PAI (<b>PAI<\b>)</td>
+        <td>LOOM NETWORK (<b>LOOM<\b>)</td>
+        <td>BITCOIN (<b>BTC<\b>)</td>
+        <td>ENJIN COIN (<b>ENJ<\b>)</td>
+        <td>FLEXACOIN (<b>FXC<\b>)</td>
+        <td>KAVA.IO (<b>KAVA<\b>)</td>
+        <td>CHILIZ (<b>CHZ<\b>)</td>
     </tr>
     <tr>
-        <td>WAZIRX (**WRX**)</td>
-        <td>ADEX (**ADX**)</td>
-        <td>SWIPE (**SXP**)</td>
-        <td>QUANT (**QNT**)</td>
-        <td>DECENTRALAND (**MANA**)</td>
-        <td>SEELE-N (**SEELE**)</td>
-        <td>REDDCOIN (**RDD**)</td>
-        <td>MAIDSAFECOIN (**MAID**)</td>
+        <td>WAZIRX (<b>WRX<\b>)</td>
+        <td>ADEX (<b>ADX<\b>)</td>
+        <td>SWIPE (<b>SXP<\b>)</td>
+        <td>QUANT (<b>QNT<\b>)</td>
+        <td>DECENTRALAND (<b>MANA<\b>)</td>
+        <td>SEELE-N (<b>SEELE<\b>)</td>
+        <td>REDDCOIN (<b>RDD<\b>)</td>
+        <td>MAIDSAFECOIN (<b>MAID<\b>)</td>
     </tr>
     <tr>
-        <td>WIREX TOKEN (**WXT**)</td>
-        <td>NEO (**NEO**)</td>
-        <td>NEXO (**NEXO**)</td>
-        <td>ZB TOKEN (**ZB**)</td>
-        <td>UNIBRIGHT (**UBT**)</td>
-        <td>AELF (**ELF**)</td>
-        <td>ARDOR (**ARDR**)</td>
-        <td>PAX GOLD (**PAXG**)</td>
+        <td>WIREX TOKEN (<b>WXT<\b>)</td>
+        <td>NEO (<b>NEO<\b>)</td>
+        <td>NEXO (<b>NEXO<\b>)</td>
+        <td>ZB TOKEN (<b>ZB<\b>)</td>
+        <td>UNIBRIGHT (<b>UBT<\b>)</td>
+        <td>AELF (<b>ELF<\b>)</td>
+        <td>ARDOR (<b>ARDR<\b>)</td>
+        <td>PAX GOLD (<b>PAXG<\b>)</td>
     </tr>
     <tr>
-        <td>NULS (**NULS**)</td>
-        <td>TETHER (**USDT**)</td>
-        <td>VECHAIN (**VET**)</td>
-        <td>WAVES (**WAVES**)</td>
-        <td>NANO (**NANO**)</td>
-        <td>SYSCOIN (**SYS**)</td>
-        <td>TERRA (**LUNA**)</td>
-        <td>STATUS (**SNT**)</td>
+        <td>NULS (<b>NULS<\b>)</td>
+        <td>TETHER (<b>USDT<\b>)</td>
+        <td>VECHAIN (<b>VET<\b>)</td>
+        <td>WAVES (<b>WAVES<\b>)</td>
+        <td>NANO (<b>NANO<\b>)</td>
+        <td>SYSCOIN (<b>SYS<\b>)</td>
+        <td>TERRA (<b>LUNA<\b>)</td>
+        <td>STATUS (<b>SNT<\b>)</td>
     </tr>
     <tr>
         <td>BAND PROTOCOL (**BAND**)</td>
