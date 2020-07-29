@@ -2,338 +2,206 @@
 
 #### suported cryptocurrencies
 <table>
-    <tr>
-        <td>HARMONY (<b>ONE</b>)</td>
-        <td>PROJECT PAI (<b>PAI</b>)</td>
-        <td>LOOM NETWORK (<b>LOOM</b>)</td>
-    <tr>
-    </tr>
-        <td>BITCOIN (<b>BTC</b>)</td>
-        <td>ENJIN COIN (<b>ENJ</b>)</td>
-        <td>FLEXACOIN (<b>FXC</b>)</td>
-    <tr>
-    </tr>
-        <td>KAVA.IO (<b>KAVA</b>)</td>
-        <td>CHILIZ (<b>CHZ</b>)</td>
-        <td>WAZIRX (<b>WRX</b>)</td>
-    <tr>
-    </tr>
-        <td>ADEX (<b>ADX</b>)</td>
-        <td>SWIPE (<b>SXP</b>)</td>
-        <td>QUANT (<b>QNT</b>)</td>
-    </tr>
-    <tr>
-        <td>DECENTRALAND (<b>MANA</b>)</td>
-        <td>SEELE-N (<b>SEELE</b>)</td>
-        <td>REDDCOIN (<b>RDD</b>)</td>
-    </tr>
-    <tr>
-        <td>MAIDSAFECOIN (<b>MAID</b>)</td>
-        <td>WIREX TOKEN (<b>WXT</b>)</td>
-        <td>NEO (<b>NEO</b>)</td>
-    </tr>
-    <tr>
-        <td>NEXO (<b>NEXO</b>)</td>
-        <td>ZB TOKEN (<b>ZB</b>)</td>
-        <td>UNIBRIGHT (<b>UBT</b>)</td>
-    </tr>
-    <tr>
-        <td>AELF (<b>ELF</b>)</td>
-        <td>ARDOR (<b>ARDR</b>)</td>
-        <td>PAX GOLD (<b>PAXG</b>)</td>
-    </tr>
-    <tr>
-        <td>NULS (<b>NULS</b>)</td>
-        <td>TETHER (<b>USDT</b>)</td>
-        <td>VECHAIN (<b>VET</b>)</td>
-    </tr>
-    <tr>
-        <td>WAVES (<b>WAVES</b>)</td>
-        <td>NANO (<b>NANO</b>)</td>
-        <td>SYSCOIN (<b>SYS</b>)</td>
-    </tr>
-    <tr>
-        <td>TERRA (<b>LUNA</b>)</td>
-        <td>STATUS (<b>SNT</b>)</td>
-        <td>BAND PROTOCOL (**BAND**)</td>
-    </tr>
-    <tr>
-        <td>ETHEREUM CLASSIC (**ETC**)</td>
-        <td>OKB (**OKB**)</td>
-        <td>AMPLEFORTH (**AMPL**)</td>
-    </tr>
-    <tr>
-        <td>HEDERA HASHGRAPH (**HBAR**)</td>
-        <td>ICON (**ICX**)</td>
-        <td>ELECTRONEUM (**ETN**)</td>
-    </tr>
-    <tr>
-        <td>MXC (**MXC**)</td>
-        <td>MONERO (**XMR**)</td>
-        <td>SYNTHETIX NETWORK TOKEN (**SNX**)</td>
-    </tr>
-    <tr>
-        <td>BYTECOIN (**BCN**)</td>
-        <td>INSOLAR (**XNS**)</td>
-        <td>DASH (**DASH**)</td>
-    </tr>
-    <tr>
-        <td>BLOCKSTACK (**STX**)</td>
-        <td>WINK (**WIN**)</td>
-        <td>CELSIUS (**CEL**)</td>
-    </tr>
-    <tr>
-        <td>KLEROS (**PNK**)</td>
-        <td>THETA FUEL (**TFUEL**)</td>
-        <td>BITCOIN SV (**BSV**)</td>
-    </tr>
-    <tr>
-        <td>CRYPTO.COM COIN (**CRO**)</td>
-        <td>KYBER NETWORK (**KNC**)</td>
-        <td>BITTORRENT (**BTT**)</td>
-    </tr>
-    <tr>
-        <td>HUSD (**HUSD**)</td>
-        <td>LOKI (**LOKI**)</td>
-        <td>BYTOM (**BTM**)</td>
-    </tr>
-    <tr>
-        <td>EOS (**EOS**)</td>
-        <td>STELLAR (**XLM**)</td>
-        <td>COSMOS (**ATOM**)</td>
-    </tr>
-    <tr>
-        <td>AUGUR (**REP**)</td>
-        <td>REN (**REN**)</td>
-        <td>ORIGINTRAIL (**TRAC**)</td>
-    </tr>
-    <tr>
-        <td>HUOBI TOKEN (**HT**)</td>
-        <td>IOTA (**MIOTA**)</td>
-        <td>DOGECOIN (**DOGE**)</td>
-    </tr>
-    <tr>
-        <td>GOLEM (**GNT**)</td>
-        <td>RSK INFRASTRUCTURE FRAMEWORK (**RIF**)</td>
-        <td>BITCOIN CASH (**BCH**)</td>
-    </tr>
-    <tr>
-        <td>THORCHAIN (**RUNE**)</td>
-        <td>KUCOIN SHARES (**KCS**)</td>
-        <td>SOLVE (**SOLVE**)</td>
-    </tr>
-    <tr>
-        <td>BASIC ATTENTION TOKEN (**BAT**)</td>
-        <td>RESERVE RIGHTS (**RSR**)</td>
-        <td>AION (**AION**)</td>
-    </tr>
-    <tr>
-        <td>CYBERVEIN (**CVT**)</td>
-        <td>STASIS EURO (**EURS**)</td>
-        <td>SUPER ZERO PROTOCOL (**SERO**)</td>
-    </tr>
-    <tr>
-        <td>NIMIQ (**NIM**)</td>
-        <td>PIVX (**PIVX**)</td>
-        <td>ONTOLOGY (**ONT**)</td>
-    </tr>
-    <tr>
-        <td>DXCHAIN TOKEN (**DX**)</td>
-        <td>LOOPRING (**LRC**)</td>
-        <td>IOST (**IOST**)</td>
-    </tr>
-    <tr>
-        <td>PUNDI X (**NPXS**)</td>
-        <td>FTX TOKEN (**FTT**)</td>
-        <td>0X (**ZRX**)</td>
-    </tr>
-    <tr>
-        <td>OMG NETWORK (**OMG**)</td>
-        <td>HYPERION (**HYN**)</td>
-        <td>SIACOIN (**SC**)</td>
-    </tr>
-    <tr>
-        <td>BITSHARES (**BTS**)</td>
-        <td>ANKR (**ANKR**)</td>
-        <td>GATECHAIN TOKEN (**GT**)</td>
-    </tr>
-    <tr>
-        <td>BITCOIN GOLD (**BTG**)</td>
-        <td>DIVI (**DIVI**)</td>
-        <td>ARAGON (**ANT**)</td>
-    </tr>
-    <tr>
-        <td>TRAVALA.COM (**AVA**)</td>
-        <td>FETCH.AI (**FET**)</td>
-        <td>12SHIPS (**TSHP**)</td>
-    </tr>
-    <tr>
-        <td>ETHEREUM (**ETH**)</td>
-        <td>BINANCE COIN (**BNB**)</td>
-        <td>BINANCE USD (**BUSD**)</td>
-    </tr>
-    <tr>
-        <td>THE MIDAS TOUCH GOLD (**TMTG**)</td>
-        <td>STRATIS (**STRAT**)</td>
-        <td>WAYKICHAIN (**WICC**)</td>
-    </tr>
-    <tr>
-        <td>STREAMR (**DATA**)</td>
-        <td>DAD (**DAD**)</td>
-        <td>DIGIBYTE (**DGB**)</td>
-    </tr>
-    <tr>
-        <td>AURORA (**AOA**)</td>
-        <td>MATIC NETWORK (**MATIC**)</td>
-        <td>VELAS (**VLX**)</td>
-    </tr>
-    <tr>
-        <td>VETHOR TOKEN (**VTHO**)</td>
-        <td>WANCHAIN (**WAN**)</td>
-        <td>SOLANA (**SOL**)</td>
-    </tr>
-    <tr>
-        <td>ENERGI (**NRG**)</td>
-        <td>HYPERCASH (**HC**)</td>
-        <td>WALTONCHAIN (**WTC**)</td>
-    </tr>
-    <tr>
-        <td>TRON (**TRX**)</td>
-        <td>OCEAN PROTOCOL (**OCEAN**)</td>
-        <td>AETERNITY (**AE**)</td>
-    </tr>
-    <tr>
-        <td>DRAGONCHAIN (**DRGN**)</td>
-        <td>ENIGMA (**ENG**)</td>
-        <td>XINFIN NETWORK (**XDCE**)</td>
-    </tr>
-    <tr>
-        <td>VOYAGER TOKEN (**VGX**)</td>
-        <td>NEBULAS (**NAS**)</td>
-        <td>AAVE (**LEND**)</td>
-    </tr>
-    <tr>
-        <td>LISK (**LSK**)</td>
-        <td>ABBC COIN (**ABBC**)</td>
-        <td>STEEM (**STEEM**)</td>
-    </tr>
-    <tr>
-        <td>MCO (**MCO**)</td>
-        <td>KUSAMA (**KSM**)</td>
-        <td>TRUECHAIN (**TRUE**)</td>
-    </tr>
-    <tr>
-        <td>RIPIO CREDIT NETWORK (**RCN**)</td>
-        <td>LITECOIN (**LTC**)</td>
-        <td>UNUS SED LEO (**LEO**)</td>
-    </tr>
-    <tr>
-        <td>TOMOCHAIN (**TOMO**)</td>
-        <td>V.SYSTEMS (**VSYS**)</td>
-        <td>NUMERAIRE (**NMR**)</td>
-    </tr>
-    <tr>
-        <td>FANTOM (**FTM**)</td>
-        <td>NEM (**XEM**)</td>
-        <td>IEXEC RLC (**RLC**)</td>
-    </tr>
-    <tr>
-        <td>HORIZEN (**ZEN**)</td>
-        <td>ZCOIN (**XZC**)</td>
-        <td>FUNFAIR (**FUN**)</td>
-    </tr>
-    <tr>
-        <td>ELASTOS (**ELA**)</td>
-        <td>ARK (**ARK**)</td>
-        <td>STORJ (**STORJ**)</td>
-    </tr>
-    <tr>
-        <td>TEZOS (**XTZ**)</td>
-        <td>DAI (**DAI**)</td>
-        <td>RAVENCOIN (**RVN**)</td>
-    </tr>
-    <tr>
-        <td>SWISSBORG (**CHSB**)</td>
-        <td>HIVE (**HIVE**)</td>
-        <td>UTRUST (**UTK**)</td>
-    </tr>
-    <tr>
-        <td>CHAINLINK (**LINK**)</td>
-        <td>MAKER (**MKR**)</td>
-        <td>BITCOIN DIAMOND (**BCD**)</td>
-    </tr>
-    <tr>
-        <td>MONACOIN (**MONA**)</td>
-        <td>CORTEX (**CTXC**)</td>
-        <td>FUSION (**FSN**)</td>
-    </tr>
-    <tr>
-        <td>BHEX TOKEN (**BHT**)</td>
-        <td>USD COIN (**USDC**)</td>
-        <td>HEDGETRADE (**HEDG**)</td>
-    </tr>
-    <tr>
-        <td>IRISNET (**IRIS**)</td>
-        <td>IOTEX (**IOTX**)</td>
-        <td>MOLECULAR FUTURE (**MOF**)</td>
-    </tr>
-    <tr>
-        <td>PNETWORK (**PNT**)</td>
-        <td>CRYPTERIUM (**CRPT**)</td>
-        <td>COMPOUND (**COMP**)</td>
-    </tr>
-    <tr>
-        <td>ALGORAND (**ALGO**)</td>
-        <td>QTUM (**QTUM**)</td>
-        <td>NERVOS NETWORK (**CKB**)</td>
-    </tr>
-    <tr>
-        <td>BANCOR (**BNT**)</td>
-        <td>ZCASH (**ZEC**)</td>
-        <td>DIGITEX FUTURES (**DGTX**)</td>
-    </tr>
-    <tr>
-        <td>CELER NETWORK (**CELR**)</td>
-        <td>THUNDER TOKEN (**TT**)</td>
-        <td>PAXOS STANDARD (**PAX**)</td>
-    </tr>
-    <tr>
-        <td>WAX (**WAXP**)</td>
-        <td>POWER LEDGER (**POWR**)</td>
-        <td>ORBS (**ORBS**)</td>
-    </tr>
-    <tr>
-        <td>GXCHAIN (**GXC**)</td>
-        <td>HUOBI POOL TOKEN (**HPT**)</td>
-        <td>BEAM (**BEAM**)</td>
-    </tr>
-    <tr>
-        <td>ORIGIN PROTOCOL (**OGN**)</td>
-        <td>THETA (**THETA**)</td>
-        <td>TRUEUSD (**TUSD**)</td>
-    </tr>
-    <tr>
-        <td>DECRED (**DCR**)</td>
-        <td>HOLO (**HOT**)</td>
-        <td>REQUEST (**REQ**)</td>
-    </tr>
-    <tr>
-        <td>MX TOKEN (**MX**)</td>
-        <td>HAVEN PROTOCOL (**XHV**)</td>
-        <td>CARDANO (**ADA**)</td>
-    </tr>
-    <tr>
-        <td>GNOSIS (**GNO**)</td>
-        <td>METAL (**MTL**)</td>
-        <td>STORMX (**STMX**)</td>
-    </tr>
-    <tr>
-        <td>XRP (**XRP**)</td>
-        <td>ELROND (**ERD**)</td>
-        <td>ZILLIQA (**ZIL**)</td>
-        <td>VERGE (**XVG**)</td>
-    </tr>
-    <tr>
-        <td>KOMODO (**KMD**)</td>
+        <td>HARMONY <b>(ONE)</b></td>
+        <td>PROJECT PAI <b>(PAI)</b></td>
+        <td>LOOM NETWORK <b>(LOOM)</b></td>
+        <td>BITCOIN <b>(BTC)</b></td>
+        <td>ENJIN COIN <b>(ENJ)</b></td>
+        <td>FLEXACOIN <b>(FXC)</b></td>
+        <td>KAVA.IO <b>(KAVA)</b></td>
+        <td>CHILIZ <b>(CHZ)</b></td>
+        <td>WAZIRX <b>(WRX)</b></td>
+        <td>ADEX <b>(ADX)</b></td>
+        <td>SWIPE <b>(SXP)</b></td>
+        <td>QUANT <b>(QNT)</b></td>
+        <td>DECENTRALAND <b>(MANA)</b></td>
+        <td>SEELE-N <b>(SEELE)</b></td>
+        <td>REDDCOIN <b>(RDD)</b></td>
+        <td>MAIDSAFECOIN <b>(MAID)</b></td>
+        <td>WIREX TOKEN <b>(WXT)</b></td>
+        <td>NEO <b>(NEO)</b></td>
+        <td>NEXO <b>(NEXO)</b></td>
+        <td>ZB TOKEN <b>(ZB)</b></td>
+        <td>UNIBRIGHT <b>(UBT)</b></td>
+        <td>AELF <b>(ELF)</b></td>
+        <td>ARDOR <b>(ARDR)</b></td>
+        <td>PAX GOLD <b>(PAXG)</b></td>
+        <td>NULS <b>(NULS)</b></td>
+        <td>TETHER <b>(USDT)</b></td>
+        <td>VECHAIN <b>(VET)</b></td>
+        <td>WAVES <b>(WAVES)</b></td>
+        <td>NANO <b>(NANO)</b></td>
+        <td>SYSCOIN <b>(SYS)</b></td>
+        <td>TERRA <b>(LUNA)</b></td>
+        <td>STATUS <b>(SNT)</b></td>
+
+        <td>BAND PROTOCOL <b>(BAND)</b></td>
+        <td>ETHEREUM CLASSIC <b>(ETC)</b></td>
+        <td>OKB <b>(OKB)</b></td>
+        <td>AMPLEFORTH <b>(AMPL)</b></td>
+        <td>HEDERA HASHGRAPH <b>(HBAR)</b></td>
+        <td>ICON <b>(ICX)</b></td>
+        <td>ELECTRONEUM <b>(ETN)</b></td>
+        <td>MXC <b>(MXC)</b></td>
+        <td>MONERO <b>(XMR)</b></td>
+        <td>SYNTHETIX NETWORK TOKEN <b>(SNX)</b></td>
+        <td>BYTECOIN <b>(BCN)</b></td>
+        <td>INSOLAR <b>(XNS)</b></td>
+        <td>DASH <b>(DASH)</b></td>
+        <td>BLOCKSTACK <b>(STX)</b></td>
+        <td>WINK <b>(WIN)</b></td>
+        <td>CELSIUS <b>(CEL)</b></td>
+        <td>KLEROS <b>(PNK)</b></td>
+        <td>THETA FUEL <b>(TFUEL)</b></td>
+        <td>BITCOIN SV <b>(BSV)</b></td>
+        <td>CRYPTO.COM COIN <b>(CRO)</b></td>
+        <td>KYBER NETWORK <b>(KNC)</b></td>
+        <td>BITTORRENT <b>(BTT)</b></td>
+        <td>HUSD <b>(HUSD)</b></td>
+        <td>LOKI <b>(LOKI)</b></td>
+        <td>BYTOM <b>(BTM)</b></td>
+        <td>EOS <b>(EOS)</b></td>
+        <td>STELLAR <b>(XLM)</b></td>
+        <td>COSMOS <b>(ATOM)</b></td>
+        <td>AUGUR <b>(REP)</b></td>
+        <td>REN <b>(REN)</b></td>
+        <td>ORIGINTRAIL <b>(TRAC)</b></td>
+        <td>HUOBI TOKEN <b>(HT)</b></td>
+        <td>IOTA <b>(MIOTA)</b></td>
+        <td>DOGECOIN <b>(DOGE)</b></td>
+        <td>GOLEM <b>(GNT)</b></td>
+        <td>RSK INFRASTRUCTURE FRAMEWORK <b>(RIF)</b></td>
+        <td>BITCOIN CASH <b>(BCH)</b></td>
+        <td>THORCHAIN <b>(RUNE)</b></td>
+        <td>KUCOIN SHARES <b>(KCS)</b></td>
+        <td>SOLVE <b>(SOLVE)</b></td>
+        <td>BASIC ATTENTION TOKEN <b>(BAT)</b></td>
+        <td>RESERVE RIGHTS <b>(RSR)</b></td>
+        <td>AION <b>(AION)</b></td>
+        <td>CYBERVEIN <b>(CVT)</b></td>
+        <td>STASIS EURO <b>(EURS)</b></td>
+        <td>SUPER ZERO PROTOCOL <b>(SERO)</b></td>
+        <td>NIMIQ <b>(NIM)</b></td>
+        <td>PIVX <b>(PIVX)</b></td>
+        <td>ONTOLOGY <b>(ONT)</b></td>
+        <td>DXCHAIN TOKEN <b>(DX)</b></td>
+        <td>LOOPRING <b>(LRC)</b></td>
+        <td>IOST <b>(IOST)</b></td>
+        <td>PUNDI X <b>(NPXS)</b></td>
+        <td>FTX TOKEN <b>(FTT)</b></td>
+        <td>0X <b>(ZRX)</b></td>
+        <td>OMG NETWORK <b>(OMG)</b></td>
+        <td>HYPERION <b>(HYN)</b></td>
+        <td>SIACOIN <b>(SC)</b></td>
+        <td>BITSHARES <b>(BTS)</b></td>
+        <td>ANKR <b>(ANKR)</b></td>
+        <td>GATECHAIN TOKEN <b>(GT)</b></td>
+        <td>BITCOIN GOLD <b>(BTG)</b></td>
+        <td>DIVI <b>(DIVI)</b></td>
+        <td>ARAGON <b>(ANT)</b></td>
+        <td>TRAVALA.COM <b>(AVA)</b></td>
+        <td>FETCH.AI <b>(FET)</b></td>
+        <td>12SHIPS <b>(TSHP)</b></td>
+        <td>ETHEREUM <b>(ETH)</b></td>
+        <td>BINANCE COIN <b>(BNB)</b></td>
+        <td>BINANCE USD <b>(BUSD)</b></td>
+        <td>THE MIDAS TOUCH GOLD <b>(TMTG)</b></td>
+        <td>STRATIS <b>(STRAT)</b></td>
+        <td>WAYKICHAIN <b>(WICC)</b></td>
+        <td>STREAMR <b>(DATA)</b></td>
+        <td>DAD <b>(DAD)</b></td>
+        <td>DIGIBYTE <b>(DGB)</b></td>
+        <td>AURORA <b>(AOA)</b></td>
+        <td>MATIC NETWORK <b>(MATIC)</b></td>
+        <td>VELAS <b>(VLX)</b></td>
+        <td>VETHOR TOKEN <b>(VTHO)</b></td>
+        <td>WANCHAIN <b>(WAN)</b></td>
+        <td>SOLANA <b>(SOL)</b></td>
+        <td>ENERGI <b>(NRG)</b></td>
+        <td>HYPERCASH <b>(HC)</b></td>
+        <td>WALTONCHAIN <b>(WTC)</b></td>
+        <td>TRON <b>(TRX)</b></td>
+        <td>OCEAN PROTOCOL <b>(OCEAN)</b></td>
+        <td>AETERNITY <b>(AE)</b></td>
+        <td>DRAGONCHAIN <b>(DRGN)</b></td>
+        <td>ENIGMA <b>(ENG)</b></td>
+        <td>XINFIN NETWORK <b>(XDCE)</b></td>
+        <td>VOYAGER TOKEN <b>(VGX)</b></td>
+        <td>NEBULAS <b>(NAS)</b></td>
+        <td>AAVE <b>(LEND)</b></td>
+        <td>LISK <b>(LSK)</b></td>
+        <td>ABBC COIN <b>(ABBC)</b></td>
+        <td>STEEM <b>(STEEM)</b></td>
+        <td>MCO <b>(MCO)</b></td>
+        <td>KUSAMA <b>(KSM)</b></td>
+        <td>TRUECHAIN <b>(TRUE)</b></td>
+        <td>RIPIO CREDIT NETWORK <b>(RCN)</b></td>
+        <td>LITECOIN <b>(LTC)</b></td>
+        <td>UNUS SED LEO <b>(LEO)</b></td>
+        <td>TOMOCHAIN <b>(TOMO)</b></td>
+        <td>V.SYSTEMS <b>(VSYS)</b></td>
+        <td>NUMERAIRE <b>(NMR)</b></td>
+        <td>FANTOM <b>(FTM)</b></td>
+        <td>NEM <b>(XEM)</b></td>
+        <td>IEXEC RLC <b>(RLC)</b></td>
+        <td>HORIZEN <b>(ZEN)</b></td>
+        <td>ZCOIN <b>(XZC)</b></td>
+        <td>FUNFAIR <b>(FUN)</b></td>
+        <td>ELASTOS <b>(ELA)</b></td>
+        <td>ARK <b>(ARK)</b></td>
+        <td>STORJ <b>(STORJ)</b></td>
+        <td>TEZOS <b>(XTZ)</b></td>
+        <td>DAI <b>(DAI)</b></td>
+        <td>RAVENCOIN <b>(RVN)</b></td>
+        <td>SWISSBORG <b>(CHSB)</b></td>
+        <td>HIVE <b>(HIVE)</b></td>
+        <td>UTRUST <b>(UTK)</b></td>
+        <td>CHAINLINK <b>(LINK)</b></td>
+        <td>MAKER <b>(MKR)</b></td>
+        <td>BITCOIN DIAMOND <b>(BCD)</b></td>
+        <td>MONACOIN <b>(MONA)</b></td>
+        <td>CORTEX <b>(CTXC)</b></td>
+        <td>FUSION <b>(FSN)</b></td>
+        <td>BHEX TOKEN <b>(BHT)</b></td>
+        <td>USD COIN <b>(USDC)</b></td>
+        <td>HEDGETRADE <b>(HEDG)</b></td>
+        <td>IRISNET <b>(IRIS)</b></td>
+        <td>IOTEX <b>(IOTX)</b></td>
+        <td>MOLECULAR FUTURE <b>(MOF)</b></td>
+        <td>PNETWORK <b>(PNT)</b></td>
+        <td>CRYPTERIUM <b>(CRPT)</b></td>
+        <td>COMPOUND <b>(COMP)</b></td>
+        <td>ALGORAND <b>(ALGO)</b></td>
+        <td>QTUM <b>(QTUM)</b></td>
+        <td>NERVOS NETWORK <b>(CKB)</b></td>
+        <td>BANCOR <b>(BNT)</b></td>
+        <td>ZCASH <b>(ZEC)</b></td>
+        <td>DIGITEX FUTURES <b>(DGTX)</b></td>
+        <td>CELER NETWORK <b>(CELR)</b></td>
+        <td>THUNDER TOKEN <b>(TT)</b></td>
+        <td>PAXOS STANDARD <b>(PAX)</b></td>
+        <td>WAX <b>(WAXP)</b></td>
+        <td>POWER LEDGER <b>(POWR)</b></td>
+        <td>ORBS <b>(ORBS)</b></td>
+        <td>GXCHAIN <b>(GXC)</b></td>
+        <td>HUOBI POOL TOKEN <b>(HPT)</b></td>
+        <td>BEAM <b>(BEAM)</b></td>
+        <td>ORIGIN PROTOCOL <b>(OGN)</b></td>
+        <td>THETA <b>(THETA)</b></td>
+        <td>TRUEUSD <b>(TUSD)</b></td>
+        <td>DECRED <b>(DCR)</b></td>
+        <td>HOLO <b>(HOT)</b></td>
+        <td>REQUEST <b>(REQ)</b></td>
+        <td>MX TOKEN <b>(MX)</b></td>
+        <td>HAVEN PROTOCOL <b>(XHV)</b></td>
+        <td>CARDANO <b>(ADA)</b></td>
+        <td>GNOSIS <b>(GNO)</b></td>
+        <td>METAL <b>(MTL)</b></td>
+        <td>STORMX <b>(STMX)</b></td>
+        <td>XRP <b>(XRP)</b></td>
+        <td>ELROND <b>(ERD)</b></td>
+        <td>ZILLIQA <b>(ZIL)</b></td>
+        <td>VERGE <b>(XVG)</b></td>
+        <td>KOMODO <b>(KMD)</b></td>
 </table>
 source: https://coinmarketcap.com/all/views/all/
