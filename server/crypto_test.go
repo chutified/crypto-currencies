@@ -114,4 +114,6 @@ func TestHandleUpdatesCrypto(t *testing.T) {
 			}
 		})
 	}
+
+	// TODO add subscribtions
 }
