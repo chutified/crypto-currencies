@@ -1,4 +1,4 @@
-.PHONY: protogen
+.PHONY: protogen, build, run
 
 protogen:
 	protoc -I protos/ --go_out=plugins=grpc:protos/crypto protos/crypto.proto
