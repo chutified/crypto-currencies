@@ -9,6 +9,20 @@ The whole service is containerized using a Docker engine and everything can be e
 
 The Cryptocurrencies obtains all necessary data from the <a href="https://coinmarketcap.com/all/views/all" target="_blank">CoinMarketCap</a> website. The algorithm does not infringe any copyrights nor the website robots exclusion protocol.
 
+## Installation
+
+### Requirements
+- <a href="https://git-scm.com/downloads" target="_blank">Git</a>
+- <a href="https://docs.docker.com/get-docker/" target="_blank">Docker Engine</a>
+
+### Linux/Mac
+This is the exact way to download and run the service. On a Windows machine, the installation process would be slightly different.
+```bash
+$ git clone https://github.com/chutified/crypto-currencies.git     # download repository
+$ cd crypto-currencies        # move to repository dir
+$ make build                  # build docker image
+$ make run                    # initialize service
+```
 
 #### Directory tree
 ```bash
