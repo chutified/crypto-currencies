@@ -24,6 +24,12 @@ $ make build                  # build docker image
 $ make run                    # initialize service
 ```
 
+## Supported crypto currencies
+The service supports a large number of cryptocurrencies, so they are listed <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md" taget="_blan">here</a>.
+**Note:**
+*The Crypto request holds the key "Name" and its value is **not** case sensitive.*
+*So the Crypto names must not be completely lowercase nor uppercase to be found.*
+
 #### Directory tree
 ```bash
 _
