@@ -1,4 +1,4 @@
-## suported cryptocurrencies
+## Suported cryptocurrencies
 these are the supported cryptocurrencies that the supported by the service and both fullname and symbol can be used as the 'Name' value. 
 <table>
     <thead>
