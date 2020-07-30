@@ -1,8 +1,9 @@
 ## suported cryptocurrencies
+these are the supported cryptocurrencies that the supported by the service and both fullname and symbol can be used as the 'Name' value. 
 <table>
     <thead>
         <tr>
-            <th>Full name</th>
+            <th>Fullname</th>
             <th>Symbol</th>
         </tr>
     </thead>
