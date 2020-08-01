@@ -6,10 +6,10 @@ import (
 	"net"
 	"os"
 
-	"github.com/chutified/crypto-currencies/config"
-	"github.com/chutified/crypto-currencies/data"
-	"github.com/chutified/crypto-currencies/protos/crypto"
-	"github.com/chutified/crypto-currencies/server"
+	config "github.com/chutified/crypto-currencies/config"
+	data "github.com/chutified/crypto-currencies/data"
+	crypto "github.com/chutified/crypto-currencies/protos/crypto"
+	server "github.com/chutified/crypto-currencies/server"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

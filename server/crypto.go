@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/chutified/crypto-currencies/data"
-	"github.com/chutified/crypto-currencies/protos/crypto"
+	data "github.com/chutified/crypto-currencies/data"
+	crypto "github.com/chutified/crypto-currencies/protos/crypto"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/codes"
