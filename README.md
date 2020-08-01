@@ -90,6 +90,64 @@ message GetCryptoResponse {
 ### Crypto.SubscribeCrypto
 SubscribeCrypto subscribes the client for the requested currency. Everytime new data are fetched from the source all clients receive the new GetCrypto responses for each subscribed currency.
 
+**GetCryptoRequest:** <a href="https://github.com/chutified/crypto-currencies#cryptogetcrypto">already documented</a>
+(<a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">supported values</a>)
+
+*Name stands for the fullname or the symbol of the requested crypto currency.The Name is not case sensitive.*
+```json
+{"Name":"Bitcoin"}
+{"Name":"ETH"}
+```
+
+**SubscribeCryptoResponse** defines the response message for the SubscribeCrypto rpc call.  The message is composed either of the GetCryptoResponse if no error occurs during the request handle or the grpc.Status which holds the grpc status code and the error message.
+
+*GetCryptoResponse is the response message with the data of the subscribed currency.*<br>
+*Error is the error message of the failed request handle.*
+```proto
+message SubscribeCryptoResponse {
+    oneof message {
+        GetCryptoResponse GetCryptoResponse = 1;
+        google.rpc.Status Error = 2;
+    }
+}
+```
+```json
+{
+    "GetCryptoResponse": {
+        "Name": "BITCOIN",
+        "Symbol": "BTC",
+        "MarketCapUSD": 2.14717599127e+11,
+        "Price": 11638.89,
+        "CirculatingSupply": 1.8448293e+07,
+        "Volume": 2.646657318e+10,
+        "ChangeHour": "0.20%",
+        "ChangeDay": "4.56%",
+        "ChangeWeek": "21.50%"
+    }
+}
+{
+    "GetCryptoResponse": {
+        "Name": "ETHEREUM",
+        "Symbol": "ETH",
+        "MarketCapUSD": 3.9797045174e+10,
+        "Price": 355.34,
+        "CirculatingSupply": 1.11996689e+08,
+        "Volume": 1.3185626922e+10,
+        "ChangeHour": "0.17%",
+        "ChangeDay": "5.24%",
+        "ChangeWeek": "25.47%"
+    }
+}
+```
+Server logs:
+```bash
+[CRYPTOCURRENCY SERVICE] 2020/08/01 10:48:47 [start] launch server on localhost:10503
+[CRYPTOCURRENCY SERVICE] 2020/08/01 10:48:51 [success] new client (33f667a9-876c-43ae-a85d-af51ef09950d)
+[CRYPTOCURRENCY SERVICE] 2020/08/01 10:49:02 [success] currency: 'BITCOIN' subscribed (33f667a9-876c-43ae-a85d-af51ef09950d)
+[CRYPTOCURRENCY SERVICE] 2020/08/01 10:49:10 [success] currency: 'ETHEREUM' subscribed (33f667a9-876c-43ae-a85d-af51ef09950d)
+[CRYPTOCURRENCY SERVICE] 2020/08/01 10:49:33 [update] cryptocurrencies data updated
+```
+
 ## Client
 All clients can be built with the help of the <a href="https://grpc.io/docs/protoc-installation/" target="_blank">Protocol Buffer Compiler</a> with the <a href="https://grpc.io/" target="_blank">gRPC</a> plugin.
 
