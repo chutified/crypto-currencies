@@ -43,18 +43,18 @@ message GetCryptoResponse {
     // MarketCapUSD is the currency total value in the market.
     double MarketCapUSD = 3;
 
-    // Price is the current cryptocurrency value in USD.
+    // Priice is the current cryptocurrency value in USD.
     double Price = 4;
 
-    // CirculatingSupple is the amount of the cryptocurrency
-    // which is publicly available and circulating in the market.
+    // CirculatingSupply is the amount of the cryptocurrency
+    // which is publicly available and is circulating in the market.
     double CirculatingSupply = 5;
 
     // Mineable is a bool value which indicates, whether is the currency
     // mineable or not.
     bool Mineable = 6;
 
-    // Volume is the total value of the currencis in USD
+    // Volume is the total value of the currencies in USD
     // which was traded in the last 24 hours.
     double Volume = 7;
 
