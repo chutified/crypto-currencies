@@ -43,7 +43,7 @@ message GetCryptoResponse {
     // MarketCapUSD is the currency total value in the market.
     double MarketCapUSD = 3;
 
-    // Pirce is the current cryptocurrency value in USD.
+    // Price is the current cryptocurrency value in USD.
     double Price = 4;
 
     // CirculatingSupple is the amount of the cryptocurrency
