@@ -2,7 +2,6 @@ package server
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"log"
 	"strings"
@@ -122,7 +121,6 @@ func (c *Crypto) SubscribeCrypto(srv crypto.Crypto_SubscribeCryptoServer) error 
 		for _, r := range c.subs[srv] {
 
 			// compare names
-			fmt.Println(r.Name, req.Name)
 			if r.Name == req.Name {
 
 				// define error status
