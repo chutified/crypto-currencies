@@ -148,6 +148,22 @@ Server logs:
 [CRYPTOCURRENCY SERVICE] 2020/08/01 10:49:33 [update] cryptocurrencies data updated
 ```
 
+## Examples
+For these examples, we will be using the tool called <a href="https://github.com/fullstorydev/grpcurl" target="_blank">gRPCurl</a> to generate binary calls to gRPC servers.
+
+### GetCrypto
+#### Crypto.GetCrypto:
+#### Crypto.GetCrypto:
+#### Crypto.GetCrypto:
+#### Server logs
+
+### SubscribeCrypto
+#### Crypto.SubscribeCrypto:
+#### Update
+#### Server logs
+
+### Error handling
+
 ## Client
 All clients can be built with the help of the <a href="https://grpc.io/docs/protoc-installation/" target="_blank">Protocol Buffer Compiler</a> with the <a href="https://grpc.io/" target="_blank">gRPC</a> plugin.
 
