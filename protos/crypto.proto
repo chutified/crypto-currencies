@@ -66,9 +66,9 @@ message GetCryptoResponse {
 }
 
 
-// SubscribeCryptoResponse defines the response messager
+// SubscribeCryptoResponse defines the response message
 // for the SubscribeCrypto rpc call.
-// The message is composed of either the GetCryptoResponse
+// The message is composed either of the GetCryptoResponse
 // if no error occurs during the request handle or the grpc.Status
 // which holds the grpc status code and the error message.
 message SubscribeCryptoResponse {
