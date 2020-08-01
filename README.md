@@ -26,11 +26,17 @@ $ make run                    # initialize service
 
 ## Supported crypto currencies
 The service supports a large number of cryptocurrencies, so they are listed <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md" taget="_blan">here</a>.
+
 **Note:**
 *The Crypto request holds the key "Name" and its value is **not** case sensitive.*
 *So the Crypto names must not be completely lowercase nor uppercase to be found.*
 
-#### Directory tree
+## Client
+All clients can be built with the help of the <a href="https://grpc.io/docs/protoc-installation/" target="_blank">Protocol Buffer Compiler</a> with the <a href="https://grpc.io/" target="_blank">gRPC</a> plugin.
+
+*The protobuffer of the services:* <a href="https://github.com/chutified/crypto-currencies/blob/master/protos/crypto.proto">commodity.proto</a> TODO CHECK URL
+
+## Directory tree
 ```bash
 _
 ├── config
