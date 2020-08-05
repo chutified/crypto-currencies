@@ -212,9 +212,94 @@ For these examples, we will be using the tool called <a href="https://github.com
 ```
 
 ### SubscribeCrypto
-#### Crypto.SubscribeCrypto:
+#### Crypto.SubscribeCrypto: `{"Name":"Litecoin"}{"Name":"Cardano"}{"Name":"EOS"}`
+```bash
+[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d @ localhost:10503 Crypto.SubscribeCrypto
+{"Name":"Litecoin"}
+{"Name":"Cardano"}
+{"Name":"EOS"}
+```
+
 #### Update
+```bash
+{
+    "GetCryptoResponse": {
+        "Name": "LITECOIN",
+        "Symbol": "LTC",
+        "MarketCapUSD": 3.867857447e+09,
+        "Price": 59.34,
+        "CirculatingSupply": 6.5176698e+07,
+        "Volume": 1.98100867e+09,
+        "ChangeHour": "0.73%",
+        "ChangeDay": "3.26%",
+        "ChangeWeek": "6.85%"
+    }
+}
+{
+    "GetCryptoResponse": {
+        "Name": "CARDANO",
+        "Symbol": "ADA",
+        "MarketCapUSD": 3.717156196e+09,
+        "Price": 0.14337,
+        "CirculatingSupply": 2.5927070538e+10,
+        "Volume": 2.75218329e+08,
+        "ChangeHour": "0.13%",
+        "ChangeDay": "-0.80%",
+        "ChangeWeek": "0.73%"
+    }
+}
+{
+    "GetCryptoResponse": {
+        "Name": "EOS",
+        "Symbol": "EOS",
+        "MarketCapUSD": 2.877500743e+09,
+        "Price": 3.08,
+        "CirculatingSupply": 9.34937925e+08,
+        "Mineable": true,
+        "Volume": 1.683325074e+09,
+        "ChangeHour": "0.26%",
+        "ChangeDay": "1.62%",
+        "ChangeWeek": "0.19%"
+    }
+}
+```
+
 #### Server logs
+#### Crypto.GetCrypto: `{"Name":"XRP"}`
+```bash
+[tommychu@localhost 017_cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"invalid"}' localhost:10503 Crypto.GetCrypto
+ERROR:
+    Code: NotFound
+    Message: cryptocurrency 'invalid' not found
+
+```
+
+#### Crypto.SubscribeCrypto: `{"Name":"Litecoin"}{"Name":"Cardano"}{"Name":"EOS"}`
+```bash
+[tommychu@localhost 017_cryptocurrencies]$ grpcurl --plaintext -d @ localhost:10503 Crypto.SubscribeCrypto
+{"Name":"invalid"}
+{
+    "Error": {
+        "code": 5,
+        "message": "cryptocurrency 'INVALID' not found"
+    }
+}
+{"Name":"BTC"}
+{"Name":"EOS"}
+^C  # close connection
+```
+
+#### Server logs
+```bash
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:22 [start] launch server on localhost:10503
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:28 [error] handle GetCryptoRequest: call data service GetCurrency: currency INVALID not found
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:36 [success] new client (c3756466-3c0a-490c-9d98-c4f7f54a672c)
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:42 [invalid] invalid request, currency: INVALID (c3756466-3c0a-490c-9d98-c4f7f54a672c)
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:48 [success] currency: 'BITCOIN' subscribed (c3756466-3c0a-490c-9d98-c4f7f54a672c)
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:52 [success] currency: 'EOS' subscribed (c3756466-3c0a-490c-9d98-c4f7f54a672c)
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:54 [error] receive error (c3756466-3c0a-490c-9d98-c4f7f54a672c)
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:54:54 [server] delete client's subscriptions (c3756466-3c0a-490c-9d98-c4f7f54a672c)
+```
 
 ### Error handling
 
