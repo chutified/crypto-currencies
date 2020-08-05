@@ -35,9 +35,9 @@ The service supports a large number of cryptocurrencies, so they are listed <a h
 ### Crypto.GetCrypto
 GetCrypto responses with the data about the cryptocurrency.  Name, symbol, market cap in USD, current price, circulating supply, mineable info, currency changes in last hour/day/week in percentages data are provided.
 
-**GetCryptoRequest** defines the request message for the cryptocurrency request. It requires the fullname or the symbol of supported cryptocurrency. The list of the supported cryptocurrecies can be found <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">here</a>
+**GetCryptoRequest** defines the request message for the cryptocurrency request. It requires the full name or the symbol of supported cryptocurrency. The list of the supported cryptocurrecies can be found <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">here</a>
 
-*Name stands for the fullname or the symbol of the requested crypto currency.The Name is not case sensitive.*
+*Name stands for the full name or the symbol of the requested crypto currency.The Name is not case sensitive.*
 ```proto
 message GetCryptoRequest {
     string Name = 1;
@@ -49,16 +49,16 @@ message GetCryptoRequest {
 }
 ```
 
-**GetCryptoResponse** defines the response message for the the GetCrypto and indirectly for the SubscribeCrypto rpc calls. The response holds the cryptocurreny's fullname, symbol, market capitalization in USD, current price in USD, circulating supply, whether is it mineable, volume and changes in the last hour/day/week.
+**GetCryptoResponse** defines the response message for the GetCrypto and indirectly for the SubscribeCrypto rpc calls. The response holds the cryptocurreny's full name, symbol, market capitalization in USD, current price in USD, circulating supply, whether is it mineable, volume and changes in the last hour/day/week.
 
-*Name is the full name of the cryptocurrency. The Name value is fully capitalized.*<br>
-*Symbol is the short version of the full currency name. The Symbol value is fully capitalized.*<br>
-*MarketCapUSD is the currency's total value in the market.*<br>
-*Price is the current cryptocurrency value in USD.*<br>
-*CirculatingSupply is the amount of the cryptocurrency which is publicly available and is circulating in the market.*<br>
-*Mineable is a bool value which indicates, whether is the currency mineable or not.*<br>
-*Volume is the total value of the currencies in USD which was traded in the last 24 hours.*<br>
-*Change is the percentage value which indicates the changes of the currency value in last hour, day or week.*
+*The Name is the full name of the cryptocurrency. The Name value is fully capitalized.*<br>
+*The Symbol is the short version of the full currency name. The Symbol value is fully capitalized.*<br>
+*The MarketCapUSD is the currency's total value in the market.*<br>
+*The Price is the current cryptocurrency value in USD.*<br>
+*The CirculatingSupply is the amount of the cryptocurrency which is publicly available and is circulating in the market.*<br>
+*The Mineable is a bool value which indicates, whether is the currency mineable or not.*<br>
+*The Volume is the total value of the currencies in USD which was traded in the last 24 hours.*<br>
+*The Change is the percentage value which indicates the changes of the currency value in last hour, day or week.*
 ```proto
 message GetCryptoResponse {
     string Name = 1;
@@ -93,13 +93,13 @@ SubscribeCrypto subscribes the client for the requested currency. Everytime new 
 **GetCryptoRequest:** <a href="https://github.com/chutified/crypto-currencies#cryptogetcrypto">already documented</a>
 (<a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">supported values</a>)
 
-*Name stands for the fullname or the symbol of the requested crypto currency.The Name is not case sensitive.*
+*Name stands for the full name or the symbol of the requested crypto currency.The Name is not case sensitive.*
 ```json
 {"Name":"Bitcoin"}
 {"Name":"ETH"}
 ```
 
-**SubscribeCryptoResponse** defines the response message for the SubscribeCrypto rpc call.  The message is composed either of the GetCryptoResponse if no error occurs during the request handle or the grpc.Status which holds the grpc status code and the error message.
+**SubscribeCryptoResponse** defines the response message for the SubscribeCrypto rpc call.  The message is composed either of the GetCryptoResponse if no error occurs during the request handle or the grpc.Status which holds the gRPC status code and the error message.
 
 *GetCryptoResponse is the response message with the data of the subscribed currency.*<br>
 *Error is the error message of the failed request handle.*
