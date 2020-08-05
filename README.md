@@ -152,10 +152,64 @@ Server logs:
 For these examples, we will be using the tool called <a href="https://github.com/fullstorydev/grpcurl" target="_blank">gRPCurl</a> to generate binary calls to gRPC servers.
 
 ### GetCrypto
-#### Crypto.GetCrypto:
-#### Crypto.GetCrypto:
-#### Crypto.GetCrypto:
+#### Crypto.GetCrypto:`{"Name":"Bitcoin"}`
+```bash
+[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"Bitcoin"}' localhost:10503 Crypto.GetCrypto
+{
+    "Name": "BITCOIN",
+    "Symbol": "BTC",
+    "MarketCapUSD": 2.15536009316e+11,
+    "Price": 11680.72,
+    "CirculatingSupply": 1.8452281e+07,
+    "Volume": 2.2863835133e+10,
+    "ChangeHour": "0.07%",
+    "ChangeDay": "4.05%",
+    "ChangeWeek": "4.47%"
+}
+
+```
+
+#### Crypto.GetCrypto: `{"Name":"ETH"}`
+```bash
+[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"ETH"}' localhost:10503 Crypto.GetCrypto
+{
+    "Name": "ETHEREUM",
+    "Symbol": "ETH",
+    "MarketCapUSD": 4.4606609034e+10,
+    "Price": 398.07,
+    "CirculatingSupply": 1.12056743e+08,
+    "Volume": 1.2022874805e+10,
+    "ChangeHour": "0.07%",
+    "ChangeDay": "2.61%",
+    "ChangeWeek": "23.71%"
+    }
+```
+
+#### Crypto.GetCrypto: `{"Name":"XRP"}`
+```
+[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"XRP"}' localhost:10503 Crypto.GetCrypto
+{
+    "Name": "XRP",
+    "Symbol": "XRP",
+    "MarketCapUSD": 1.3641412615e+10,
+    "Price": 0.304071,
+    "CirculatingSupply": 4.4862646997e+10,
+    "Mineable": true,
+    "Volume": 2.103006272e+09,
+    "ChangeHour": "0.03%",
+    "ChangeDay": "1.41%",
+    "ChangeWeek": "25.76%"
+}
+
+```
+
 #### Server logs
+```bash
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:19:27 [start] launch server on localhost:10503
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:19:38 [success] handled request of 'BITCOIN' currency
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:19:56 [success] handled request of 'ETHEREUM' currency
+[CRYPTOCURRENCY SERVICE] 2020/08/05 20:20:12 [success] handled request of 'XRP' currency
+```
 
 ### SubscribeCrypto
 #### Crypto.SubscribeCrypto:
