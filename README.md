@@ -49,7 +49,7 @@ message GetCryptoRequest {
 }
 ```
 
-**GetCryptoResponse** defines the response message for the GetCrypto and indirectly for the SubscribeCrypto rpc calls. The response holds the cryptocurreny's full name, symbol, market capitalization in USD, current price in USD, circulating supply, whether is it mineable, volume and changes in the last hour/day/week.
+**GetCryptoResponse** defines the response message for the GetCrypto and indirectly for the SubscribeCrypto rpc calls. The response holds the cryptocurrency's full name, symbol, market capitalization in USD, current price in USD, circulating supply, whether is it mineable, volume and changes in the last hour/day/week.
 
 *The Name is the full name of the cryptocurrency. The Name value is fully capitalized.*<br>
 *The Symbol is the short version of the full currency name. The Symbol value is fully capitalized.*<br>
