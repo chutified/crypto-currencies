@@ -1,11 +1,11 @@
 # Crypto-currencies
 
-The Crypto-currencies is a microservice, which is using <a href="https://grpc.io/" target="_blank">gRPC technology</a>.
-The service provides the latest data about all cryptocurrencies on the market.
+The Crypto-currencie microservice uses <a href="https://grpc.io/" target="_blank">gRPC technology</a> to
+provide the latest data of all available cryptocurrencies on the market.
 It supports both unary and bidirectional streaming calls, which allows data update every 15 seconds.
-When an error occurs, it handles it in a non-fatal way with the error message.
+If an error occurs, service handles it in a non-fatal way with an error message.
 
-The whole service is containerized using a Docker engine and everything can be easily run and deployed with the pre-prepared `make` commands in the Makefile.
+The whole service is containerized using a Docker engine so the server can be easily run and deployed with the pre-prepared `make` commands.
 
 The Cryptocurrencies obtains all necessary data from the <a href="https://coinmarketcap.com/all/views/all" target="_blank">CoinMarketCap</a> website. The algorithm does not infringe any copyrights nor the website robots exclusion protocol.
 
@@ -16,7 +16,8 @@ The Cryptocurrencies obtains all necessary data from the <a href="https://coinma
 - <a href="https://docs.docker.com/get-docker/" target="_blank">Docker Engine</a>
 
 ### Linux/Mac
-This is the exact way to download and run the service. On a Windows machine, the installation process would be slightly different.
+This is all you need to do to run the server.
+On a Windows machine, the installation process would be slightly different.
 ```bash
 $ git clone https://github.com/chutified/crypto-currencies.git     # download repository
 $ cd crypto-currencies        # move to repository dir
@@ -25,7 +26,8 @@ $ make run                    # initialize service
 ```
 
 ## Supported crypto currencies
-The service supports a large number of cryptocurrencies, so they are listed <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md" taget="_blan">here</a>.
+The service supports a large number of cryptocurrencies.
+The complete list of them can be accessed <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md" taget="_blan">here</a>.
 
 **Note:**
 *The Crypto request holds the key "Name" and its value is **not** case sensitive.*
@@ -33,9 +35,9 @@ The service supports a large number of cryptocurrencies, so they are listed <a h
 
 ## Documentation
 ### Crypto.GetCrypto
-GetCrypto responses with the data about the cryptocurrency.  Name, symbol, market cap in USD, current price, circulating supply, mineable info, currency changes in last hour/day/week in percentages data are provided.
+GetCrypto responses with the data of the cryptocurrency. Name, symbol, market cap in USD, current price, circulating supply, mineable info, currency changes in last hour/day/week in percentages data are provided.
 
-**GetCryptoRequest** defines the request message for the cryptocurrency request. It requires the full name or the symbol of supported cryptocurrency. The list of the supported cryptocurrecies can be found <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">here</a>
+**GetCryptoRequest** defines the request message for the cryptocurrency request. It requires the full name or the symbol of supported cryptocurrency. The list of  supported cryptocurrecies can be found <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">here</a>
 
 *Name stands for the full name or the symbol of the requested crypto currency.The Name is not case sensitive.*
 ```proto
@@ -49,7 +51,7 @@ message GetCryptoRequest {
 }
 ```
 
-**GetCryptoResponse** defines the response message for the GetCrypto and indirectly for the SubscribeCrypto rpc calls. The response holds the cryptocurrency's full name, symbol, market capitalization in USD, current price in USD, circulating supply, whether is it mineable, volume and changes in the last hour/day/week.
+**GetCryptoResponse** defines the response message for the GetCrypto and indirectly for the SubscribeCrypto RPC calls. The response holds the cryptocurrency's full name, symbol, market capitalization in USD, current price in USD, circulating supply, whether is it mineable, volume and changes in the last hour/day/week.
 
 *The Name is the full name of the cryptocurrency. The Name value is fully capitalized.*<br>
 *The Symbol is the short version of the full currency name. The Symbol value is fully capitalized.*<br>
@@ -99,7 +101,7 @@ SubscribeCrypto subscribes the client for the requested currency. Everytime new 
 {"Name":"ETH"}
 ```
 
-**SubscribeCryptoResponse** defines the response message for the SubscribeCrypto rpc call.  The message is composed either of the GetCryptoResponse if no error occurs during the request handle or the grpc.Status which holds the gRPC status code and the error message.
+**SubscribeCryptoResponse** defines the response message for the SubscribeCrypto rpc call.  The message is composed of the GetCryptoResponse (if no error occurs during the request handle) or the grpc.Status which holds the gRPC status code and the error message.
 
 *GetCryptoResponse is the response message with the data of the subscribed currency.*<br>
 *Error is the error message of the failed request handle.*
@@ -304,7 +306,7 @@ ERROR:
 ### Error handling
 
 ## Client
-All clients can be built with the help of the <a href="https://grpc.io/docs/protoc-installation/" target="_blank">Protocol Buffer Compiler</a> with the <a href="https://grpc.io/" target="_blank">gRPC</a> plugin.
+All clients can built with the <a href="https://grpc.io/docs/protoc-installation/" target="_blank">Protocol Buffer Compiler</a> with the <a href="https://grpc.io/" target="_blank">gRPC</a> plugin.
 
 *The protobuffer of the services:* <a href="https://github.com/chutified/crypto-currencies/blob/master/protos/crypto.proto">commodity.proto</a> TODO CHECK URL
 
