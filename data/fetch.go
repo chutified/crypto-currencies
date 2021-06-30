@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	models "github.com/chutified/crypto-currencies/models"
+	models "github.com/chutommy/crypto-currencies/models"
 	"github.com/pkg/errors"
 )
 

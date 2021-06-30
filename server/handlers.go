@@ -3,7 +3,7 @@ package server
 import (
 	"strings"
 
-	crypto "github.com/chutified/crypto-currencies/protos/crypto"
+	crypto "github.com/chutommy/crypto-currencies/protos/crypto"
 	"github.com/pkg/errors"
 )
 

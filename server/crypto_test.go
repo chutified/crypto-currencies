@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	data "github.com/chutified/crypto-currencies/data"
-	crypto "github.com/chutified/crypto-currencies/protos/crypto"
+	data "github.com/chutommy/crypto-currencies/data"
+	crypto "github.com/chutommy/crypto-currencies/protos/crypto"
 	"gopkg.in/go-playground/assert.v1"
 )
 

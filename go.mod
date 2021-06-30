@@ -1,4 +1,4 @@
-module github.com/chutified/crypto-currencies
+module github.com/chutommy/crypto-currencies
 
 go 1.14
 

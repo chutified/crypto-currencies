@@ -19,7 +19,7 @@ The Cryptocurrencies obtains all necessary data from the <a href="https://coinma
 This is all you need to do to run the server.
 On a Windows machine, the installation process would be slightly different.
 ```bash
-$ git clone https://github.com/chutified/crypto-currencies.git     # download repository
+$ git clone https://github.com/chutommy/crypto-currencies.git     # download repository
 $ cd crypto-currencies        # move to repository dir
 $ make build                  # build docker image
 $ make run                    # initialize service
@@ -27,7 +27,7 @@ $ make run                    # initialize service
 
 ## Supported crypto currencies
 The service supports a large number of cryptocurrencies.
-The complete list of them can be accessed <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md" taget="_blan">here</a>.
+The complete list of them can be accessed <a href="https://github.com/chutommy/crypto-currencies/blob/master/docs/currencies.md" taget="_blan">here</a>.
 
 **Note:**
 *The Crypto request holds the key "Name" and its value is **not** case sensitive.*
@@ -37,7 +37,7 @@ The complete list of them can be accessed <a href="https://github.com/chutified/
 ### Crypto.GetCrypto
 GetCrypto responses with the data of the cryptocurrency. Name, symbol, market cap in USD, current price, circulating supply, mineable info, currency changes in last hour/day/week in percentages data are provided.
 
-**GetCryptoRequest** defines the request message for the cryptocurrency request. It requires the full name or the symbol of supported cryptocurrency. The list of  supported cryptocurrecies can be found <a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">here</a>
+**GetCryptoRequest** defines the request message for the cryptocurrency request. It requires the full name or the symbol of supported cryptocurrency. The list of  supported cryptocurrecies can be found <a href="https://github.com/chutommy/crypto-currencies/blob/master/docs/currencies.md">here</a>
 
 *Name stands for the full name or the symbol of the requested crypto currency.The Name is not case sensitive.*
 ```proto
@@ -92,8 +92,8 @@ message GetCryptoResponse {
 ### Crypto.SubscribeCrypto
 SubscribeCrypto subscribes the client for the requested currency. Everytime new data are fetched from the source all clients receive the new GetCrypto responses for each subscribed currency.
 
-**GetCryptoRequest:** <a href="https://github.com/chutified/crypto-currencies#cryptogetcrypto">already documented</a>
-(<a href="https://github.com/chutified/crypto-currencies/blob/master/docs/currencies.md">supported values</a>)
+**GetCryptoRequest:** <a href="https://github.com/chutommy/crypto-currencies#cryptogetcrypto">already documented</a>
+(<a href="https://github.com/chutommy/crypto-currencies/blob/master/docs/currencies.md">supported values</a>)
 
 *Name stands for the full name or the symbol of the requested crypto currency.The Name is not case sensitive.*
 ```json
@@ -156,7 +156,7 @@ For these examples, we will be using the tool called <a href="https://github.com
 ### GetCrypto
 #### Crypto.GetCrypto:`{"Name":"Bitcoin"}`
 ```bash
-[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"Bitcoin"}' localhost:10503 Crypto.GetCrypto
+[chutommy@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"Bitcoin"}' localhost:10503 Crypto.GetCrypto
 {
     "Name": "BITCOIN",
     "Symbol": "BTC",
@@ -173,7 +173,7 @@ For these examples, we will be using the tool called <a href="https://github.com
 
 #### Crypto.GetCrypto: `{"Name":"ETH"}`
 ```bash
-[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"ETH"}' localhost:10503 Crypto.GetCrypto
+[chutommy@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"ETH"}' localhost:10503 Crypto.GetCrypto
 {
     "Name": "ETHEREUM",
     "Symbol": "ETH",
@@ -189,7 +189,7 @@ For these examples, we will be using the tool called <a href="https://github.com
 
 #### Crypto.GetCrypto: `{"Name":"XRP"}`
 ```
-[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"XRP"}' localhost:10503 Crypto.GetCrypto
+[chutommy@localhost cryptocurrencies]$ grpcurl --plaintext -d '{"Name":"XRP"}' localhost:10503 Crypto.GetCrypto
 {
     "Name": "XRP",
     "Symbol": "XRP",
@@ -216,7 +216,7 @@ For these examples, we will be using the tool called <a href="https://github.com
 ### SubscribeCrypto
 #### Crypto.SubscribeCrypto: `{"Name":"Litecoin"}{"Name":"Cardano"}{"Name":"EOS"}`
 ```bash
-[chutified@localhost cryptocurrencies]$ grpcurl --plaintext -d @ localhost:10503 Crypto.SubscribeCrypto
+[chutommy@localhost cryptocurrencies]$ grpcurl --plaintext -d @ localhost:10503 Crypto.SubscribeCrypto
 {"Name":"Litecoin"}
 {"Name":"Cardano"}
 {"Name":"EOS"}
@@ -308,7 +308,7 @@ ERROR:
 ## Client
 All clients can built with the <a href="https://grpc.io/docs/protoc-installation/" target="_blank">Protocol Buffer Compiler</a> with the <a href="https://grpc.io/" target="_blank">gRPC</a> plugin.
 
-*The protobuffer of the services:* <a href="https://github.com/chutified/crypto-currencies/blob/master/protos/crypto.proto">commodity.proto</a> TODO CHECK URL
+*The protobuffer of the services:* <a href="https://github.com/chutommy/crypto-currencies/blob/master/protos/crypto.proto">commodity.proto</a> TODO CHECK URL
 
 ## Directory tree
 ```bash
